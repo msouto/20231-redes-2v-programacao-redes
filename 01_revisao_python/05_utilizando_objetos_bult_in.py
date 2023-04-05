@@ -1,9 +1,8 @@
-S = ‘spam'
-len(S) #mostrar o tamanho de s
-
-#S[0]
-#S[1:3]
-#S + ‘xyz'
+S = "spam"
+print(len(S)) #mostrar o tamanho de s
+print(S[0]) #mostrando o primeiro ínidice de posição 0
+print(S[1:3]) #definindo um intervalo que começa na posição 1 e vai até a posição 2
+print(S + 'xyz') #concatençaõ de SPAM com XYZ
 #S.find(‘pa')
 #S.upper()
 #S.isalpha()
