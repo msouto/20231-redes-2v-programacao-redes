@@ -1,1 +1,6 @@
-print("Hello World") #Nosso primeirio olá mundo de revisão
+print("Hello World") #Nosso primeirio olxá mundo de revisão
+
+print(2**8) #potência
+
+msg = "Olá, mundo"
+print(msg)
