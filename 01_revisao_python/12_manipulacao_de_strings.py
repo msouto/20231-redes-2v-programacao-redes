@@ -104,3 +104,22 @@ print(s[0])
 print(s[-1])
 print(s[0:2])
 print(s[0:-2])
+
+#Os elementos iniciam com índice ‘0'
+
+#Elementos negativos representam a ordem da direita pra esquerda, iniciando com o último elemento sendo ‘-1’
+
+#No slice, o limite inferior é inclusivo e o limite superior é não-inclusivo
+
+#Existe o terceiro parâmetro no slice que representa o passo que, por padrão é 1. Por exemplo, X[i:j:k], 
+                # i representa o limite inferior, 
+                # j representa o limite superior e 
+                # k representa o passo.
+
+s = 'abcdefghijklmnop'
+print(s[1:10:2]) #alterando o passo padrão do slice
+
+print(s[::2]) #alterei o passo para 2, incluindo toda a sequência da string
+
+s = 'hello'
+print(s[::-1]) #invertendo a sequência
