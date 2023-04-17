@@ -123,3 +123,16 @@ print(s[::2]) #alterei o passo para 2, incluindo toda a sequência da string
 
 s = 'hello'
 print(s[::-1]) #invertendo a sequência
+
+#conversão de strings
+
+#Para utilizar uma string em uma operação matemática é preciso convertê-la antes
+s = '42' 
+#x = s + 5
+#print(x) #Erro, ao tentar concatenar tipos diferentes
+
+x = int(s) + 5    # Soma aritmética
+print(x)
+
+x = s + str(5)    # Concatenação
+print(x)
