@@ -97,3 +97,10 @@ for i in s:
 
 print('t' in s)
 print('z' in s)
+
+#indexação e slice (recorte)
+s = 'python\n\r'
+print(s[0])
+print(s[-1])
+print(s[0:2])
+print(s[0:-2])
