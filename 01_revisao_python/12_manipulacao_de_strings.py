@@ -44,3 +44,19 @@ print(len(s))
 #\v	Vertical tab
 
 
+
+#Raw Strings (cruas, sem tratamento)
+
+#Pode ser mais conveniente, quando trabalhando com escape, usar um formato de strings do tipo raw.
+
+#Raw string é criado com o caractere (r) antes da string
+
+#Ex:  Caso precisemos criar uma string para um caminho
+s = 'c:\novo\texto.txt'
+print(s)
+
+ 
+w = 'c:\\novo\\texto.txt'  
+print(w)
+z = r'c:\novo\texto.txt' 
+print(z)
