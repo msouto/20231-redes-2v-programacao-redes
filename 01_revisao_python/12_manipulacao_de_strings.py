@@ -83,3 +83,17 @@ print(s)
 
 s = 'abc' 
 print(4*s)
+
+
+#iterações em uma string
+
+#É possível usar um laço for para iterar sobre os elementos da string
+
+s = 'python' 
+print(s)
+for i in s:
+  print(i, end=' ')
+
+
+print('t' in s)
+print('z' in s)
