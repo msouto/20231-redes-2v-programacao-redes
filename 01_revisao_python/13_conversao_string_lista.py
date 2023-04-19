@@ -16,5 +16,11 @@ L[0] = 'r' #Lista são mutáveis
 print(L[0])
 print(L)
 
-w = ''.join(L) #Conversão de uma lista em string
+#Conversão de uma lista em string
+w = ''.join(L) 
 print(w)
+
+#Com o uso do método split é possível usar padrões de separação de strings para transformá-la em uma lista
+s = 'joao,paulo,pedro,marco'
+L = s.split(',')
+print(L)
