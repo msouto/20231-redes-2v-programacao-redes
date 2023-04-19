@@ -136,3 +136,37 @@ print(x)
 
 x = s + str(5)    # Concatenação
 print(x)
+
+
+#strings são imutáveis
+
+#Não é possível alterar uma string
+#>>> s = ‘python’ 
+#>>> s[1] = 'i'
+#Traceback (most recent call last):
+#  File "<pyshell#40>", line 1, in <module>
+#    s[1] = 'i'
+#TypeError: 'str' object does not support item assignment
+
+s = s[0] + 'i' + s[2:]
+print(s)
+
+s = s.replace('y','i')
+print(s)
+
+#Métodos das strings
+s = 'python' 
+dir(s)
+
+#Buscar e substituir dentro de uma string
+s = 'python' 
+print(s.find('th'))    # posição da primeira ocorrência
+
+s = 'xxxSPAMxxxEGGSxxx'
+print(s)
+s.replace('xxx','ooo')  # substitui todas as ocorrências
+print(s)
+
+s.replace('xxx','ooo',1)  # substitui a primeira ocorrência
+print(s)
+
