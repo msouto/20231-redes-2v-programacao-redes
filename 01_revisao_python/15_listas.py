@@ -19,3 +19,35 @@ print(L)
 L = list('spam')
 print(L)
 
+#Indexaçã e slide
+L = [4, 'abc', 1.23]
+print(L[0]) 
+print(L[-2])
+print(L[:2])
+
+#Operações básicas com listas
+L = [4, 'abc', 1.23]
+M = ['fgh', 5.6, 10, 145]
+
+print(len(L))
+print(len(M))
+
+print(L+M) #concatenando listas
+print(len(L+M))
+
+#repetição de elementos
+print(3*L)
+
+#Iteração e associação
+L = [4, 'abc', 1.23]
+print('abc' in L)
+
+#iterando sobre a lista
+for x in L:
+    print(x)
+
+#List comprehensions
+#Recurso para criação de listas por iteração a outro objeto
+
+res = [i*4 for i in 'abc']
+print(res)
