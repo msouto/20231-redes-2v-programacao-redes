@@ -14,11 +14,13 @@ print('Conexão recebida de: ', addr)
 
 while True:
     data = client.recv(1024)
+    if not data:
+        break
     message = 'Recebida'
     byte_msg = message.encode('utf-8')
     client.send(byte_msg)
     print('Mensagem recebida: ',data)
-    
+
 client.close()
 tcp_server_socket.close()
 
