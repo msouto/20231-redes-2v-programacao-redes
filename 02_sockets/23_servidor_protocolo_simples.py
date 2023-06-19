@@ -24,7 +24,7 @@ def handle_request(request):
         except ValueError:
             return "Mensagem inválida"
     elif tokens[0] == 'raiz':
-        if len(tokens != 2):
+        if len(tokens) != 2:
             return "Mensagem inválida"
         try:
             num = float(tokens[1])
@@ -57,8 +57,8 @@ def start_server(host,port):
             #Resposta da rquest ao cliente, tem que ser tratado conforme o protocolo de aplicação
             response = handle_request(request)
             client_socket.send((response + '\n').encode())
-            client_socket.close()
-            print("Conexão encerrada com: ", client_address)
+        client_socket.close()
+        print("Conexão encerrada com: ", client_address)
 
 if __name__=='__main__':
     host = 'localhost'
