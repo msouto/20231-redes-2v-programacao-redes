@@ -1,3 +1,4 @@
+import os
 import requests
 from bs4 import BeautifulSoup
 
@@ -28,6 +29,46 @@ def solicitar_escolha_usuario(nomes_arquivos):
         except ValueError:
             print("Entrada inválida. Tente novamente.")
 
+def tratar_download_arquivo(url, nome_arquivo):
+    response = requests.head(url + nome_arquivo)
+    if response.status_code != 200:
+        print("Arquivo não encontrado.")
+        return
+    
+    if nome_arquivo.endswith('/'):
+        tratar_download_diretorio(url, nome_diretorio)
+    else:
+        fazer_download_arquivo(url, nome_arquivo)
+
+def tratar_download_diretorio(url, nome_diretorio):
+    url_diretorio = url + nome_diretorio
+    nomes_arquivos = obter_arquivos_disponiveis(url_diretorio)
+
+    if not nomes_arquivos:
+        print("Diretório vazio.")
+        return
+    
+    nome_local_diretorio = nome_diretorio.rstrip('/')
+    os.makedirs(nome_local_diretorio, exist_ok=True)
+
+    for nome_arquivo in nomes_arquivos:
+        fazer_download_arquivo(url_diretorio, nome_arquivo, destino=nome_local_diretorio)
+
+def fazer_download_arquivo(url, nome_arquivo, destino=''):
+    url_arquivo = url + nome_arquivo
+    response = requests.get(url_arquivo, stream=True, enconding='utf-8')
+
+    if response.status_code != 200:
+        print(f"Não foi possível fazer o download do arquivo '{nome_arquivo}'." )
+        return
+    
+    nome_local_arquivo = os.path.join(destino, nome_arquivo) if destino else nome_arquivo
+    with open(nome_local_arquivo, 'wb') as file:
+        for chunk in response.iter_content(chunk_size=8192):
+            file.write(chunk)
+
+    print(f"Arquivo '{nome_arquivo}' salvo com sucesso como '{nome_local_arquivo}' ")
+
 # Solicita ao usuário que insira a URL
 url = input("Digite a URL: ")
 
@@ -39,6 +80,7 @@ arquivo_escolhido = solicitar_escolha_usuario(nomes_arquivos)
 
 if arquivo_escolhido:
     print(f"Você escolheu salvar o arquivo '{arquivo_escolhido}'.")
-    # Faça algo com o arquivo escolhido, como fazer o download ou processamento adicional
+    tratar_download_arquivo(url, arquivo_escolhido)
+
 else:
     print("Nenhum arquivo selecionado. O programa será encerrado.")
