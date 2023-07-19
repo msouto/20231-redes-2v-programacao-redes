@@ -35,3 +35,18 @@ def process_packet(packet):
 
 # Captura de pacotes em tempo real
 sniff(prn=process_packet, store=0)
+
+# Imprime a contagem de pacotes por IP de origem
+print("\nContagem de pacotes por IP de origem:")
+for ip, count in packet_count_src_ip.items():
+    print(f"{ip}: {count} pacotes")
+
+# Imprime a contagem de pacotes por IP de destino
+print("\nContagem de pacotes por IP de destino:")
+for ip, count in packet_count_dst_ip.items():
+    print(f"{ip}: {count} pacotes")
+
+# Imprime a contagem de pacotes por tipo de protocolo
+print("\nContagem de pacotes por tipo de protocolo:")
+for protocol, count in packet_count_protocol.items():
+    print(f"Protocolo {protocol}: {count} pacotes")
